@@ -8,3 +8,6 @@ services:
     container_name: "dind"
     ports:
       - "51212:22"
+    environment:
+      TZ: ${TZ}
+      ROOT_PASSWORD: ${ROOT_PASSWORD}
