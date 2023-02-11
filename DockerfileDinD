@@ -27,5 +27,8 @@ ENV ROOT_PASSWORD root
 
 EXPOSE 22
 
-ENTRYPOINT ["entry_point.sh"]
+COPY ./entry_point.sh /usr/local/bin/docker-entrypoint
+RUN chmod +x /usr/local/bin/docker-entrypoint
+
+ENTRYPOINT ["docker-entrypoint"]
 CMD    ["/usr/sbin/sshd", "-D", "-e"]
