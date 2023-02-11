@@ -11,3 +11,5 @@ services:
     environment:
       TZ: ${TZ}
       ROOT_PASSWORD: ${ROOT_PASSWORD}
+    volumes:
+      - .:/app
