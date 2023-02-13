@@ -25,7 +25,7 @@ ENV TZ Asia/Tokyo
 
 ENV ROOT_PASSWORD root
 
-COPY entry_point.sh /usr/local/bin/docker-entrypoint
+COPY ./entry_point.sh /usr/local/bin/docker-entrypoint
 RUN chmod +x /usr/local/bin/docker-entrypoint
 
 ENTRYPOINT ["docker-entrypoint"]
