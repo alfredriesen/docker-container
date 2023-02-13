@@ -13,4 +13,3 @@ services:
       ROOT_PASSWORD: ${ROOT_PASSWORD}
     volumes:
       - ${STACK_PATH}/${STACK_ID}:/app
-    entrypoint: ./entry_point.sh
