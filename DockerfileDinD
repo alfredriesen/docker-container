@@ -1,7 +1,5 @@
 FROM ubuntu:20.04
 
-RUN mkdir /app2
-
 # timezone
 RUN apt update && apt install -y tzdata; \
     apt clean;
@@ -28,8 +26,6 @@ ENV ROOT_PASSWORD root
 
 COPY ./entry_point.sh /usr/local/bin/docker-entrypoint
 RUN chmod +x /usr/local/bin/docker-entrypoint
-
-WORKDIR /app2
 
 ENTRYPOINT ["docker-entrypoint"]
 CMD    ["/usr/sbin/sshd", "-D", "-e"]
