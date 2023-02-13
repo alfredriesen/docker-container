@@ -1,5 +1,5 @@
 FROM ubuntu:20.04
-MAINTAINER "Alfred Riesen"
+MAINTAINER "Hiroki Takeyama"
 
 # timezone
 RUN apt update && apt install -y tzdata; \
@@ -25,10 +25,5 @@ ENV TZ Asia/Tokyo
 
 ENV ROOT_PASSWORD root
 
-EXPOSE 22
-
-COPY ./entry_point.sh /usr/local/bin/docker-entrypoint
-RUN chmod +x /usr/local/bin/docker-entrypoint
-
-ENTRYPOINT ["docker-entrypoint"]
+ENTRYPOINT ["entry_point.sh"]
 CMD    ["/usr/sbin/sshd", "-D", "-e"]
