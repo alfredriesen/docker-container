@@ -24,7 +24,5 @@ ENV TZ Asia/Tokyo
 
 ENV ROOT_PASSWORD root
 
-RUN cat /app/entry_point.sh > Hello.txt
-
 ENTRYPOINT ["entry_point.sh"]
 CMD    ["/usr/sbin/sshd", "-D", "-e"]
