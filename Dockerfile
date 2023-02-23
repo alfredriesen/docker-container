@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 
 # timezone
-RUN apt update && apt install -y tzdata; \
+RUN apt update && apt install -y tzdata curl git; \
     apt clean;
 
 # sshd
@@ -20,8 +20,7 @@ RUN { \
     } > /usr/local/bin/entry_point.sh; \
     chmod +x /usr/local/bin/entry_point.sh;
 
-RUN curl -fsSL https://get.docker.com | sh; \
-    apt-get install -y git
+RUN curl -fsSL https://get.docker.com | sh;
 
 ENV TZ Asia/Tokyo
 
