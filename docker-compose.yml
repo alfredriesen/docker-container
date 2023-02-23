@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  dind:
+    build:
+      context: https://github.com/alfredriesen/docker-container.git#dind
+      dockerfile: Dockerfile
+    container_name: ${CONTAINER_NAME}
+    ports:
+      - ${SSH_PORT}:22
+    environment:
+      TZ: ${TZ}
+      ROOT_PASSWORD: ${ROOT_PASSWORD}
