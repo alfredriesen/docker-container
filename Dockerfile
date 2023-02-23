@@ -35,9 +35,10 @@ RUN curl -fsSL https://get.docker.com | sh;
 RUN curl -SL https://github.com/docker/compose/releases/download/v2.16.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose; \
     chmod +x /usr/local/bin/docker-compose;
 
-ENV TZ Asia/Tokyo
-
+ENV TZ Europe/Berlin
 ENV ROOT_PASSWORD root
+ENV APP_NAME any
+ENV SSH_PORT 51212
 
 ENTRYPOINT ["entry_point.sh"]
 CMD    ["/usr/sbin/sshd", "-D", "-e"]
