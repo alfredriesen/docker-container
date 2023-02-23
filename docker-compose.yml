@@ -2,7 +2,7 @@ version: '3'
 
 volumes:
   app:
-    name: ${APP_NAME}
+    name: dind-${APP_NAME}-volume
 
 services:
   dind:
