@@ -4,6 +4,14 @@ FROM ubuntu:20.04
 RUN apt update && apt install -y tzdata; \
     apt clean;
 
+# curl
+RUN apt update && apt install -y curl; \
+    apt clean;
+
+#git
+RUN apt update && apt install -y git; \
+    apt clean;
+
 # sshd
 RUN mkdir /run/sshd; \
     apt install -y openssh-server; \
@@ -19,6 +27,9 @@ RUN { \
     echo 'exec "$@"'; \
     } > /usr/local/bin/entry_point.sh; \
     chmod +x /usr/local/bin/entry_point.sh;
+
+#docker
+RUN curl -fsSL https://get.docker.com | sh;
 
 ENV TZ Asia/Tokyo
 
