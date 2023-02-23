@@ -2,14 +2,14 @@ version: '3'
 
 volumes:
   app:
-    name: ${APP_VOLUME}
+    name: ${APP_NAME}
 
 services:
   dind:
     build:
       context: https://github.com/alfredriesen/docker-container.git#dind
       dockerfile: Dockerfile
-    container_name: ${CONTAINER_NAME}
+    container_name: dind-${APP_NAME}
     ports:
       - ${SSH_PORT}:22
     environment:
