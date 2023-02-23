@@ -2,8 +2,7 @@ version: '3'
 
 volumes:
   app:
-    external:
-      name: ${APP_VOLUME}
+    name: ${APP_VOLUME}
 
 services:
   dind:
