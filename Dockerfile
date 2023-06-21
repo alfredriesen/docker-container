@@ -24,6 +24,7 @@ RUN { \
     echo '#!/bin/bash -eu'; \
     echo 'ln -fs /usr/share/zoneinfo/${TZ} /etc/localtime'; \
     echo 'echo "root:${ROOT_PASSWORD}" | chpasswd'; \
+    echo 'echo "export APP_NAME=${ROOT_PASSWORD}" >> /root/.profile'; \
     echo 'exec "$@"'; \
     } > /usr/local/bin/entry_point.sh; \
     chmod +x /usr/local/bin/entry_point.sh;
@@ -34,8 +35,6 @@ RUN curl -fsSL https://get.docker.com | sh;
 #docker-compose
 RUN curl -SL https://github.com/docker/compose/releases/download/v2.16.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose; \
     chmod +x /usr/local/bin/docker-compose;
-
-RUN echo "export APP_NAME=${APP_NAME}" >> /root/.profile
 
 ENV TZ Europe/Berlin
 ENV ROOT_PASSWORD root
