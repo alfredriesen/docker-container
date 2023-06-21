@@ -15,7 +15,6 @@ services:
     environment:
       TZ: ${TZ}
       ROOT_PASSWORD: ${ROOT_PASSWORD}
-      APP_NAME: ${APP_NAME}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - app:/root
