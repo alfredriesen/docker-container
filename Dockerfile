@@ -24,7 +24,7 @@ RUN { \
     echo '#!/bin/bash -eu'; \
     echo 'ln -fs /usr/share/zoneinfo/${TZ} /etc/localtime'; \
     echo 'echo "root:${ROOT_PASSWORD}" | chpasswd'; \
-    echo 'echo "export APP_NAME=${ROOT_PASSWORD}" >> /root/.profile'; \
+    echo 'echo "export APP_NAME=${APP_NAME}" >> /root/.profile'; \
     echo 'exec "$@"'; \
     } > /usr/local/bin/entry_point.sh; \
     chmod +x /usr/local/bin/entry_point.sh;
