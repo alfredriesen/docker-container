@@ -35,7 +35,7 @@ RUN curl -fsSL https://get.docker.com | sh;
 RUN curl -SL https://github.com/docker/compose/releases/download/v2.16.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose; \
     chmod +x /usr/local/bin/docker-compose;
 
-RUN cat "APP_NAME=${APP_NAME}" >> /root/.bashrc
+RUN echo "APP_NAME=${APP_NAME}" >> /root/.bashrc
 
 ENV TZ Europe/Berlin
 ENV ROOT_PASSWORD root
