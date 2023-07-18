@@ -15,8 +15,8 @@ services:
     environment:
       SSH_PORT: ${SSH_PORT}
       APP_NAME: ${APP_NAME}
-      TZ: ${TZ:Europe/Berlin}
-      ROOT_PASSWORD: ${ROOT_PASSWORD:root}
+      TZ: ${TZ:-Europe/Berlin}
+      ROOT_PASSWORD: ${ROOT_PASSWORD:-root}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - app:/root
